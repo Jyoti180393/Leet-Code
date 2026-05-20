@@ -1,0 +1,12 @@
+document.getElementById("title").innerHTML = "Counting Bits";
+
+function countBits(num) {
+  const res = new Uint8Array(num + 1);
+  for (let i = 0; i < res.length; i++) {
+    res[i] = res[Math.floor(i / 2)] + (i % 2);
+    // res[i] = res[i >> 1] + (i & 1);
+  }
+  return [...res];
+}
+console.log(countBits(2));
+console.log(countBits(10));
